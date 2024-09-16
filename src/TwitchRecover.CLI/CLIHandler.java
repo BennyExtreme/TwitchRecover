@@ -22,7 +22,6 @@ import TwitchRecover.CLI.Enums.oType;
 import TwitchRecover.CLI.Enums.vType;
 import TwitchRecover.CLI.Handlers.ClipHandler;
 import TwitchRecover.CLI.Handlers.HighlightHandler;
-import TwitchRecover.CLI.Handlers.MassHandler;
 import TwitchRecover.CLI.Handlers.StreamHandler;
 import TwitchRecover.CLI.Handlers.VODHandler;
 import TwitchRecover.CLI.Handlers.VideoHandler;
@@ -60,44 +59,40 @@ public class CLIHandler {
             vType vt;
             while(agane) {
                 //Call the coordinating handler object and set the vType enum variable.
-                if(mOption <= 2) {      //Stream:
+                if(mOption <= 1) {      //Stream:
                     StreamHandler sh = new StreamHandler(mOption);
                     vt=vType.Stream;
                 }
-                else if(mOption <= 5) {     //VOD:
+                else if(mOption <= 4) {     //VOD:
                     VODHandler vh = new VODHandler(mOption);
                     vt=vType.VOD;
                 }
-                else if(mOption <= 8) {     //Highlight:
+                else if(mOption <= 7) {     //Highlight:
                     HighlightHandler hh = new HighlightHandler(mOption);
                     vt=vType.Highlight;
                 }
-                else if(mOption <= 12) {    //Video:
+                else if(mOption <= 11) {    //Video:
                     VideoHandler vh = new VideoHandler(mOption);
                     vt=vType.Video;
                 }
-                else if(mOption <= 15) {    //Clip:
+                else {    //Clip:
                     ClipHandler ch = new ClipHandler(mOption);
                     vt=vType.Clip;
                 }
-                else {      //Mass recovery options:
-                    MassHandler mh = new MassHandler(mOption);
-                    vt=vType.Mass;
-                }
                 //Set the oType enum variable correctly matching to the operation:
-                if(mOption==1 || mOption==3 || mOption==6 || mOption==13){
+                if(mOption==1 || mOption==2 || mOption==5 || mOption==12){
                     op=oType.Retrieve;
                 }
-                else if(mOption==2 || mOption==4 || mOption==7 || mOption==11 || mOption==14 || mOption==17){
+                else if(mOption==3 || mOption==6 || mOption==10 || mOption==13){
                     op=oType.Download;
                 }
-                else if(mOption==5 || mOption==8 || mOption==15 || mOption==16){
+                else if(mOption==4 || mOption==7 || mOption==14){
                     op=oType.Recover;
                 }
-                else if(mOption==9){
+                else if(mOption==8){
                     op=oType.Check;
                 }
-                else if(mOption==10){
+                else if(mOption==9){
                     op=oType.Unmute;
                 }
                 else{

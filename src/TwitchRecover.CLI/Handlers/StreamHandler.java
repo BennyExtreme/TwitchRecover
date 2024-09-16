@@ -39,10 +39,6 @@ public class StreamHandler {
         if(option==1){
             retrieve();
         }
-        else{
-            System.out.print("\n\nThis feature is currently unavailable.\nIt will be released in the 2.0 beta release.");
-            //download();
-        }
     }
 
     /**

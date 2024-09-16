@@ -26,7 +26,6 @@ public enum vType {
     Clip("clip", ""),
     Stream("stream", ""),
     Video("video", ""),
-    Mass("", ""),
     M3U8("M3U8", ""),
     Results("results", "");
 

@@ -65,7 +65,7 @@ public class Prompts {
      */
     public static int menu(){
         menuPrinter();
-        return getIntInput(1,17);
+        return getIntInput(1,14);
     }
 
     /**
@@ -76,27 +76,23 @@ public class Prompts {
                   "\n\nMenu:"
                 + "\nStreams:"
                 + "\n1. Get a live stream link (get the M3U8 stream link of a live stream)."
-                + "\n2. Download a stream live. (Currently unavailable, coming in the beta)"
                 + "\n\nVODs:"
-                + "\n3. Get the link to a VOD (including sub-only)."
-                + "\n4. Download a VOD (including sub-only)."
-                + "\n5. Recover a VOD - 60 days maximum (can be less in rare cases)."
+                + "\n2. Get the link to a VOD (including sub-only)."
+                + "\n3. Download a VOD (including sub-only)."
+                + "\n4. Recover a VOD - 60 days maximum (can be less in rare cases)."
                 + "\n\nHighlights:"
-                + "\n6. Retrieve the link to a highlight."
-                + "\n7. Download a highlight."
-                + "\n8. Recover a highlight."
+                + "\n5. Retrieve the link to a highlight."
+                + "\n6. Download a highlight."
+                + "\n7. Recover a highlight."
                 + "\n\nVideos:"
-                + "\n9. Check if a VOD/highlight has muted segments."
-                + "\n10. 'Unmute' a VOD/highlight (be able to view the muted segments of the M3U8)."
-                + "\n11. Download an M3U8 file."
-                + "\n12. Convert a TS file to MP4."
+                + "\n8. Check if a VOD/highlight has muted segments."
+                + "\n9. 'Unmute' a VOD/highlight (be able to view the muted segments of the M3U8)."
+                + "\n10. Download an M3U8 file."
+                + "\n11. Convert a TS file to MP4."
                 + "\n\nClips:"
-                + "\n13. Retrieve permanent link of a clip - never deleted."
-                + "\n14. Download a clip."
-                + "\n15. Recover ALL clips from a stream - NO time limit."
-                + "\n\nMass options: (Currently unavailable, coming in the beta)"
-                + "\n16. Mass recover options. (Currently unavailable, coming in the beta)"
-                + "\n17. Mass download options. (Currently unavailable, coming in the beta)"
+                + "\n12. Retrieve permanent link of a clip - never deleted."
+                + "\n13. Download a clip."
+                + "\n14. Recover ALL clips from a stream - NO time limit."
         );
     }
 
@@ -112,9 +108,6 @@ public class Prompts {
         String midWord="another";
         if(o==oType.Output){
             midWord="the";
-        }
-        if(v!=vType.Mass) {
-            System.out.print("\n\nDo you want to " + o.text + " " + midWord + " " + v.text + "?");
         }
         else{
             System.out.print("\n\nDo you want to perform a new mass "+ o.text+".");
