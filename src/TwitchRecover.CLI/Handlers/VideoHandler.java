@@ -41,13 +41,13 @@ public class VideoHandler {
      */
     public VideoHandler(int option){
         this.option=option;
-        if(option==9){
+        if(option==8){
             checkMute();
         }
-        else if(option==10){
+        else if(option==9){
             unmute();
         }
-        else if(option==11){
+        else if(option==10){
             downloadM3U8();
         }
         else{

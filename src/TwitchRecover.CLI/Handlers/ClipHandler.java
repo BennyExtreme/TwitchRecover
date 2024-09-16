@@ -37,10 +37,10 @@ public class ClipHandler {
      */
     public ClipHandler(int option){
         this.option=option;
-        if(option==13){
+        if(option==12){
             retrievePerma();
         }
-        else if(option==14){
+        else if(option==13){
             downloadClip();
         }
         else{

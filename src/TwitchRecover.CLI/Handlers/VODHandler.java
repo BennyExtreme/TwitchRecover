@@ -34,10 +34,10 @@ public class VODHandler {
 
     public VODHandler(int option){
         this.option=option;
-        if(option==3){
+        if(option==2){
             retrieve();
         }
-        else if(option==4){
+        else if(option==3){
             download();
         }
         else{
