@@ -56,7 +56,7 @@ public class StreamHandler {
         // If the response contains twitch.tv/ then it means that the user inserted a link
         // So we match the url against the regex to find the channel name
         if (response.contains("twitch.tv/")) {
-            response = Compute.singleRegex("twitch\\.tv\\/([a-zA-Z0-9_]+)", response);
+            response = Compute.singleRegex("twitch\\.tv\\/([a-zA-Z0-9_]*)", response);
         }
         live.setChannel(response.toLowerCase());
         Feeds feeds=live.retrieveFeeds();
