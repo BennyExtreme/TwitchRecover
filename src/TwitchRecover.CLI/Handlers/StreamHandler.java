@@ -19,6 +19,7 @@ package TwitchRecover.CLI.Handlers;
 
 import TwitchRecover.CLI.CLIHandler;
 import TwitchRecover.CLI.Enums.oType;
+import TwitchRecover.Core.Compute;
 import TwitchRecover.Core.Feeds;
 import TwitchRecover.Core.Live;
 /**
@@ -49,9 +50,14 @@ public class StreamHandler {
         Live live=new Live();
         System.out.print(
                   "\n\nLive stream link retrieval:"
-                + "\nEnter the channel name: "
+                + "\nEnter the channel name/link: "
         );
         String response=CLIHandler.sc.next();
+        // If the response contains twitch.tv/ then it means that the user inserted a link
+        // So we match the url against the regex to find the channel name
+        if (response.contains("twitch.tv/")) {
+            response = Compute.singleRegex("twitch\\.tv\\/([a-zA-Z0-9_]+)", response);
+        }
         live.setChannel(response.toLowerCase());
         Feeds feeds=live.retrieveFeeds();
         if(feeds.getFeeds().isEmpty()){

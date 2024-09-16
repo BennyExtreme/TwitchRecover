@@ -109,9 +109,7 @@ public class Prompts {
         if(o==oType.Output){
             midWord="the";
         }
-        else{
-            System.out.print("\n\nDo you want to perform a new mass "+ o.text+".");
-        }
+        System.out.print("\n\nDo you want to " + o.text + " " + midWord + " " + v.text + "?");
         System.out.print("\nEnter y for yes and n for no: ");
         String response=CLIHandler.sc.next();
         while(!(response.equalsIgnoreCase("y") || response.equalsIgnoreCase("n"))){
